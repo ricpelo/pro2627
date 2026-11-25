@@ -6,6 +6,23 @@ def fact(n: int) -> int:
     return n * fact(n - 1)
 
 def fact(n: int) -> int:
+    """
+    Calcula el factorial de un número.
+    
+    Args:
+        n (int): El número al que hay que calcular el factorial.
+                 Debe ser mayor o igual que cero.
+                 
+    Returns:
+        (int): El factorial de n.
+        
+    >>> fact(5)
+    120
+    >>> fact(4)
+    24
+    >>> fact(0)
+    1
+    """
     res = 1
     while n > 0:
         res *= n

@@ -10,6 +10,24 @@ lista de listas de números, de forma que:
 """
 
 def analizar_diagonales(matriz: list[list[int]]) -> None | tuple[int, int]:
+    """
+    Suma las diagonales de una matriz, si es cuadrada.
+    
+    Args:
+        matriz (list[list[int]]): La matriz, almacenada por filas y
+            representada como una lista de filas, donde cada fila es una
+            lista de enteros.
+            
+    Returns:
+        None: si la matriz es vacía o no es cuadrada.
+        tuple[int, int]: las sumas de la diagonal principal y la secundaria,
+            en ese orden.
+            
+    >>> analizar_diagonales([])
+    >>> analizar_diagonales([[1, 2], [3, 4], [5, 6]])
+    >>> analizar_diagonales([[1, 2, 3], [4, 5, 6], [9, 8, 7]])
+    (13, 17)
+    """
     def es_cuadrada() -> bool:
         num_filas = len(matriz)
         i = 0
