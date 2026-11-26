@@ -47,3 +47,8 @@ def analizar_diagonales(matriz: list[list[int]]) -> None | tuple[int, int]:
         i += 1
     return (suma_principal, suma_secundaria)
     
+    
+def test_analizar_diagonales():
+    assert analizar_diagonales([]) is None, "Matriz vacía"
+    assert analizar_diagonales([[1, 2], [3, 4], [5, 6]]) is None, "Matriz no cuadrada"
+    assert analizar_diagonales([[1, 2, 3], [4, 5, 6], [9, 8, 7]]) == (13, 17)
