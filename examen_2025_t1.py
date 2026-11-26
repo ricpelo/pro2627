@@ -54,6 +54,32 @@ def compresion_simple(lista: list[Any]) -> list[tuple[Any, int]]:
     return res
 
 
+def normalizar_nombres(nombres: list[str]) -> list[str]:
+    """
+    Normaliza nombres.
+    
+    Recibe una lista de cadenas con posibles espacios extra y que
+    mezcla incorrectamente mayúsculas y minúsculas, y devuelve una
+    una lista con los nombres normalizados:
+    
+    - Elimina espacios iniciales y finales.
+    - Sustituye varios espacios internos consecutivos por uno solo.
+    - Pone la inicial de cada palabra en mayúsculas y el resto en
+      minúsculas.
+      
+    >>> normalizar_nombres(["   ana    LópEz ", "JOSÉ    PÉREZ  "])
+    ['Ana López', 'José Pérez']
+    """
+    def limpiar(nombre: str) -> str:
+        return " ".join(nombre.title().strip().split())
+    res = []
+    i = 0
+    while i < len(nombres):
+        res.append(limpiar(nombres[i]))
+        i += 1
+    return res
+
+
 def test_colapsar1():
     assert colapsar([(7, 3), (2, 1)]) == [7, 7, 7, 2]
 
