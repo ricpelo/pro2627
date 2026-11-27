@@ -1,9 +1,3 @@
-"""
-Debe recibir una lista de tuplas de la forma (valor, cantidad) y
-devuelve una nueva lista que contenga _cantidad_ copias del _valor_
-original.
-"""
-
 from typing import Any
 
 def colapsar(lista: list[tuple[Any, int]]) -> list[Any]:
@@ -78,6 +72,49 @@ def normalizar_nombres(nombres: list[str]) -> list[str]:
         res.append(limpiar(nombres[i]))
         i += 1
     return res
+
+
+def intercalar(a: list, b: list) -> list:
+    """
+    Devuelve una lista con los elementos de a y b intercalados.
+
+    Si una lista es más larga que la otra, los elementos sobrantes
+    se añaden al final.
+    
+    >>> intercalar([1, 3, 5], [2, 4, 6])
+    [1, 2, 3, 4, 5, 6]
+    >>> intercalar([1, 3], [2, 4, 6])
+    [1, 2, 3, 4, 6]
+    """
+    res = []
+    n = min(len(a), len(b))
+    i = 0
+    while i < n:
+        res.append(a[i])
+        res.append(b[i])
+        i += 1
+    res += a[i:]
+    res += b[i:]
+    return res
+
+
+def analizar_secuencias(lista: list[list[int]]) -> list[tuple[int, int, int]]:
+    """
+    Calcula, para cada sublista, la longitud, la suma y el máximo.
+
+    >>> analizar_secuencias([[1, 2, 3], [5, 1]])
+    [(3, 6, 3), (2, 6, 5)]
+    """
+    
+
+
+
+
+
+
+
+
+
 
 
 def test_colapsar1():
